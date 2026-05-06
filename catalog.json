@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "libs": [
+    {
+      "id": "jackson",
+      "label": "Jackson (databind)",
+      "description": "JSON serialisation. com.fasterxml.jackson.databind.ObjectMapper.",
+      "version": "2.16.1",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/FasterXML/jackson",
+      "jars": [
+        {
+          "path": "libs/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar",
+          "size": 1637611,
+          "sha256": "baf8a8ebee8f45ef68cdd5e2dd3923b3e296c0937b96ec0b4806aa3a31bccd1d"
+        },
+        {
+          "path": "libs/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar",
+          "size": 578125,
+          "sha256": "f5f8ef90609e64fec82eb908e497dc7d81b2eb983fe509b870292a193cde4dfb"
+        },
+        {
+          "path": "libs/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar",
+          "size": 78480,
+          "sha256": "a4730771e6a495dd3793a42cdb8ce6bddb96c77e15f40c98fd8d9a7ae09e7286"
+        }
+      ]
+    },
+    {
+      "id": "slf4j",
+      "label": "SLF4J + simple binding",
+      "description": "Logging. LoggerFactory.getLogger(...) — output goes to stderr.",
+      "version": "2.0.9",
+      "license": "MIT",
+      "homepage": "https://www.slf4j.org/",
+      "jars": [
+        {
+          "path": "libs/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar",
+          "size": 64579,
+          "sha256": "0818930dc8d7debb403204611691da58e49d42c50b6ffcfdce02dadb7c3c2b6c"
+        },
+        {
+          "path": "libs/org/slf4j/slf4j-simple/2.0.9/slf4j-simple-2.0.9.jar",
+          "size": 16073,
+          "sha256": "71f9c6de6dbaec2d10caa303faf08c5e749be53b242896c64c96b7c6bb6d62dc"
+        }
+      ]
+    },
+    {
+      "id": "guava",
+      "label": "Guava",
+      "description": "Google Core Libraries — collections, primitives, hashing.",
+      "version": "33.0.0-jre",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/google/guava",
+      "jars": [
+        {
+          "path": "libs/com/google/guava/guava/33.0.0-jre/guava-33.0.0-jre.jar",
+          "size": 3047503,
+          "sha256": "f4d85c3e4d411694337cb873abea09b242b664bb013320be6105327c45991537"
+        }
+      ]
+    }
+  ]
+}
