@@ -1,19 +1,24 @@
 # fluxtion-playground-libs
 
-Curated, CheerpJ-verified Maven artefacts served to the Fluxtion playground via
-[jsDelivr](https://cdn.jsdelivr.net/) so the browser client can fetch them with
-CORS enabled.
+Curated, CheerpJ-verified Maven artefacts served to the Fluxtion playground
+directly from GitHub so the browser client can fetch them with CORS enabled.
 
 ## How it's consumed
 
-The playground reads `catalog.json` over jsDelivr and lazy-fetches the JAR
-bytes the first time a user adds a dependency. Bytes are cached in IndexedDB,
-so subsequent visits are instant.
+The playground reads `catalog.json` and lazy-fetches JAR bytes the first time
+a user adds a dependency. Bytes are cached in IndexedDB, so subsequent visits
+are instant.
 
 ```
-https://cdn.jsdelivr.net/gh/telaminai/fluxtion-playground-libs@main/catalog.json
-https://cdn.jsdelivr.net/gh/telaminai/fluxtion-playground-libs@main/libs/<group>/<artifact>/<version>/<file>.jar
+https://raw.githubusercontent.com/telaminai/fluxtion-playground-libs/main/catalog.json
+https://raw.githubusercontent.com/telaminai/fluxtion-playground-libs/main/libs/<group>/<artifact>/<version>/<file>.jar
 ```
+
+We use `raw.githubusercontent.com` rather than jsDelivr's `/gh/` mirror because
+jsDelivr serves text files (`.json`, `.md`) but **403s on `.jar`** — its
+blocklist treats Java archives as disallowed binaries. raw.githubusercontent
+sets `Access-Control-Allow-Origin: *` on every response and rate-limits per
+visitor IP, which fits playground scale.
 
 ## Layout
 
@@ -43,8 +48,10 @@ re-used in the downloaded Maven project's `pom.xml` (modulo repo URL).
    ```
 4. Add an entry to `catalog.json` listing the JAR plus all runtime
    transitives (flattened — no in-browser POM resolution).
-5. Commit + push. jsDelivr edge-cache picks up `@main` within ~10 minutes;
-   pin the playground client to a specific commit SHA for instant cache-bust.
+5. Commit + push. `raw.githubusercontent.com` serves the new path
+   immediately — no edge-cache lag. The playground's IndexedDB cache keys
+   on the URL, so adding a new versioned path never collides with existing
+   cached bytes.
 
 ## What's currently here
 
