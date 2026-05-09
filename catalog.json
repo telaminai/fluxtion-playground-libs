@@ -105,6 +105,26 @@
           "sha256": "11af62d3b0806b5de4550b1ec384e9b97b08757c468fcbdcb8d56d88e7e18470"
         }
       ]
+    },
+    {
+      "id": "csvflow",
+      "label": "csvflow (CSV marshaller + annotation processor)",
+      "description": "@CsvMarshaller-driven CSV parsing. RowMarshaller.load(Class).stream(text) returns a Stream<T>. Annotation processor generates the marshaller class at compile time.",
+      "version": "0.2.2",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/telaminai/csvflow",
+      "jars": [
+        {
+          "path": "libs/com/telamin/csvflow/0.2.2/csvflow-0.2.2.jar",
+          "size": 88722,
+          "sha256": "0859fa07b8443106d7ec470e9ceac712443e87c9eb607d65327e617e0f1821c1"
+        },
+        {
+          "path": "libs/com/telamin/csvflow-annotationprocessor/0.2.2/csvflow-annotationprocessor-0.2.2.jar",
+          "size": 62451,
+          "sha256": "2a2759f628817059af92249f550e3a4be8def1fd98c26b90e622294188ea9b92"
+        }
+      ]
     }
   ]
 }
