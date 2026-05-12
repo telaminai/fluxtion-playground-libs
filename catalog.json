@@ -109,15 +109,15 @@
     {
       "id": "metrics-nodes",
       "label": "acme metrics-nodes (third-party Fluxtion node bundle)",
-      "description": "Sample third-party Fluxtion node library. Bundles MetricEvent + MetricsCollector/Aggregator/Publisher nodes. Consumers reference the top-level beans in Spring XML; Fluxtion source-gen drags in transitive nodes via field references.",
-      "version": "1.0-SNAPSHOT",
+      "description": "Sample third-party Fluxtion node library. 3 event types (CPU / memory / network) feed an aggregator → downstream consumers (windowed averager, threshold alerter, publishers). MetricsAggregator's no-arg ctor builds the 3 collectors; consumers wire up in Spring XML against the shared aggregator.",
+      "version": "1.1-SNAPSHOT",
       "license": "Apache-2.0",
       "homepage": "https://github.com/telaminai/acme_metrics",
       "jars": [
         {
-          "path": "libs/com/acme/metrics/metrics-nodes/1.0-SNAPSHOT/metrics-nodes-1.0-SNAPSHOT.jar",
-          "size": 4899,
-          "sha256": "bdbb0fb6062f116323e3fa573c71c1af65801b66748486272ba5ba1a9695fb30"
+          "path": "libs/com/acme/metrics/metrics-nodes/1.1-SNAPSHOT/metrics-nodes-1.1-SNAPSHOT.jar",
+          "size": 11520,
+          "sha256": "743601cef4b091c68d475844d66ee68407b0e92736676cfa45b869dc33070796"
         }
       ]
     },
