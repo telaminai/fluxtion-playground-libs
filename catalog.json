@@ -112,7 +112,7 @@
       "description": "Sample third-party Fluxtion node library. Bundles MetricEvent + MetricsCollector/Aggregator/Publisher nodes. Consumers reference the top-level beans in Spring XML; Fluxtion source-gen drags in transitive nodes via field references.",
       "version": "1.0-SNAPSHOT",
       "license": "Apache-2.0",
-      "homepage": "https://github.com/telaminai/metrics-nodes",
+      "homepage": "https://github.com/telaminai/acme_metrics",
       "jars": [
         {
           "path": "libs/com/acme/metrics/metrics-nodes/1.0-SNAPSHOT/metrics-nodes-1.0-SNAPSHOT.jar",
